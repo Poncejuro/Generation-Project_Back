@@ -38,4 +38,10 @@ public class Profile implements ProfileFieldLimits {
 	@JsonIgnoreProperties
 	private List<Publication> publications = new ArrayList();
 
+	@OneToMany(mappedBy = "followee", fetch = FetchType.EAGER)
+	private List<People> followers;
+
+	@OneToMany(mappedBy = "follower", fetch = FetchType.EAGER)
+	private List<People> followees;
+
 }

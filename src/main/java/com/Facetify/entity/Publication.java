@@ -40,9 +40,4 @@ public class Publication implements PublicationFieldLimits {
 	@OneToMany(mappedBy = "publication", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Event> events = new ArrayList();
 
-	@OneToMany(mappedBy = "followee", fetch = FetchType.EAGER)
-	private List<People> followers;
-
-	@OneToMany(mappedBy = "follower", fetch = FetchType.EAGER)
-	private List<People> followees;
 }
