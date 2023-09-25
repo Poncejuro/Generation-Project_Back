@@ -1,4 +1,4 @@
-package com.example.Facetify;
+package com.Facetify;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

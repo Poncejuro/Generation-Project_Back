@@ -1,0 +1,20 @@
+package com.Facetify.entity.limits;
+
+public interface UserFieldLimits {
+	int FULLNAME_MIN_LENGTH = 20;
+	int FULLNAME_MAX_LENGTH = 80;
+	int FULLNAME_DB_LENGTH = 80;
+	
+	int EMAIL_MIN_LENGTH = 2;
+	int EMAIL_MAX_LENGTH = 100;
+	int EMAIL_DB_LENGTH = 100;
+
+	int CELLPHONE_MIN_LENGTH = 10;
+	int CELLPHONE_MAX_LENGTH = 16;
+	int CELLPHONE_DB_LENGTH = 16;
+
+	int PASSWORD_MIN_LENGTH = 3;
+	int PASSWORD_MAX_LENGTH = 25;
+	int PASSWORD_DB_LENGTH = 150;
+	
+}

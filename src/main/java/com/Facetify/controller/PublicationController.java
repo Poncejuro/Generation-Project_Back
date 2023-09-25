@@ -1,25 +1,26 @@
-package com.example.Facetify.controller;
+package com.Facetify.controller;
 
-import com.example.Facetify.entity.Publications;
-import com.example.Facetify.service.PublicationsService;
+import com.Facetify.entity.Publication;
+import com.Facetify.service.PublicationService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-public class PublicationsController {
+public class PublicationController {
     @Autowired
-    PublicationsService publicationsService;
+    PublicationService publicationsService;
 
     @GetMapping ("/publications")
     @ResponseBody
-    public List<Publications> list(){
+    public List<Publication> list(){
         return publicationsService.list();
     }
     @PostMapping("/publications")
     @ResponseBody
-    public Publications create(@RequestBody Publications publications){
+    public Publication create(@RequestBody Publication publications){
         return publicationsService.save(publications);
     }
     @DeleteMapping("/publications/{id_publication}")
@@ -28,7 +29,7 @@ public class PublicationsController {
     }
     @GetMapping("/publications/{id_publication}")
     @ResponseBody
-    public Publications search(@PathVariable Long id){
+    public Publication search(@PathVariable Long id){
         return publicationsService.search(id);
     }
 }

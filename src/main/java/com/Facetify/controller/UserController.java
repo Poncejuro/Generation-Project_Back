@@ -1,7 +1,8 @@
-package com.example.Facetify.controller;
+package com.Facetify.controller;
 
-import com.example.Facetify.entity.Users;
-import com.example.Facetify.service.UserService;
+import com.Facetify.entity.User;
+import com.Facetify.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,13 +16,13 @@ public class UserController {
 
     @GetMapping("/user")
     @ResponseBody
-    public List<Users> list(){
+    public List<User> list(){
         return userService.list();
     }
 
     @PostMapping("/user")
     @ResponseBody
-    public Users create(@RequestBody Users users){
+    public User create(@RequestBody User users){
         return userService.save(users);
     }
 
@@ -32,7 +33,7 @@ public class UserController {
 
     @GetMapping("/user/{id}")
     @ResponseBody
-    public Users search(@PathVariable Long id){
+    public User search(@PathVariable Long id){
         return userService.search(id);
     }
 }

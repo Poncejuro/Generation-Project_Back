@@ -1,7 +1,8 @@
-package com.example.Facetify.controller;
+package com.Facetify.controller;
 
-import com.example.Facetify.entity.Profile;
-import com.example.Facetify.service.ProfileService;
+import com.Facetify.entity.Profile;
+import com.Facetify.service.ProfileService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
