@@ -1,15 +1,23 @@
 package com.Facetify.service;
 
+import java.util.List;
+
 import com.Facetify.entity.Event;
 
 public interface EventService {
-	Event createProfileHasPublication(Event profilePublication);
 
-	Event getProfileHasPublicationById(Long profileId, Long publicationId);
+	Event createEvent(Event event);
 
-	Event updateProfileHasPublication(Event ProfilePublication, Long profileId,
-			Long publicationId);
+//	Event getEventByPublicationId(Long publicationId);
+//	Event getEventById(Long profileId, Long publicationId);
+//	Event getEventById(Long profileId, Long publicationId);
+	Event getEventById(Long eventId);
 
-	void deleteProfileHasPublication(Long profileId, Long publicationId);
+	List<Event> getAllEvents();
+
+//	Event updateEvent(Event event, Long profileId, Long publicationId);
+
+//	void deleteEvent(Long profileId, Long publicationId);
+	void deleteEvent(Long eventId);
 
 }

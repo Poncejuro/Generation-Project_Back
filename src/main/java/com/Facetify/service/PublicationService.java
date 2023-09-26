@@ -1,32 +1,19 @@
 package com.Facetify.service;
 
 import com.Facetify.entity.Publication;
-import com.Facetify.repository.PublicationRepository;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.Facetify.entity.limits.PublicationFieldLimits;
 
 import java.util.List;
 
-@Service
-public class PublicationService {
-	@Autowired
-	// se exporta desde profileRepository para instanciarlo.
-	PublicationRepository publicationsRepo;
+public interface PublicationService extends PublicationFieldLimits {
 
-	public Publication save(Publication publications) {
-		return publicationsRepo.save(publications);
-	}
+	Publication createPublication(Publication publication);
 
-	public void delete(Long id) {
-		publicationsRepo.deleteById(id);
-	}
+	Publication getPublicationById(Long id);
 
-	public List<Publication> list() {
-		return publicationsRepo.findAll();
-	}
+	List<Publication> getAllPublications();
 
-	public Publication search(Long id) {
-		return publicationsRepo.findById(id).orElse(null);
-	}
+	Publication updatePublication(Publication publication, Long id);
+
+	void deletePublication(Long id);
 }

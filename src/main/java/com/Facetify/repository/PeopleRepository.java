@@ -3,9 +3,9 @@ package com.Facetify.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.Facetify.entity.Profile;
+import com.Facetify.entity.People;
 
 @Repository
-public interface ProfileRepository extends JpaRepository<Profile, Long> {
+public interface PeopleRepository extends JpaRepository<People, Long> {
 
 }

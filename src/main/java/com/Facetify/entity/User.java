@@ -3,7 +3,6 @@ package com.Facetify.entity;
 import java.sql.Timestamp;
 
 import com.Facetify.entity.limits.UserFieldLimits;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -33,9 +32,8 @@ public class User implements UserFieldLimits {
 	@Column(name = "created_at", insertable = false, updatable = false, columnDefinition = "timestamp default CURRENT_TIMESTAMP")
 	private Timestamp createdAt;
 	@Column(name = "active")
-	private boolean active;
+	private Boolean active;
 
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-	@JsonIgnore
 	private Profile profile;
 }

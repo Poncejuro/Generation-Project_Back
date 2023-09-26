@@ -1,32 +1,20 @@
 package com.Facetify.service;
 
 import com.Facetify.entity.Profile;
-import com.Facetify.repository.ProfileRepository;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.Facetify.entity.limits.ProfileFieldLimits;
 
 import java.util.List;
 
-@Service
-public class ProfileService {
-	@Autowired
-	// se exporta desde profileRepository para instanciarlo.
-	ProfileRepository profileRepo;
+public interface ProfileService extends ProfileFieldLimits {
 
-	public Profile save(Profile profile) {
-		return profileRepo.save(profile);
-	}
+	Profile createProfile(Profile profile);
 
-	public void delete(Long id) {
-		profileRepo.deleteById(id);
-	}
+	Profile getProfileById(Long id);
 
-	public List<Profile> list() {
-		return profileRepo.findAll();
-	}
+	List<Profile> getAllProfiles();
 
-	public Profile search(Long id) {
-		return profileRepo.findById(id).orElse(null);
-	}
+	Profile updateProfile(Profile profile, Long id);
+
+	void deleteProfile(Long id);
+
 }

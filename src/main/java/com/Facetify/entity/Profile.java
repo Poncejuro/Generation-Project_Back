@@ -34,14 +34,14 @@ public class Profile implements ProfileFieldLimits {
 	@JoinColumn(name = "user_id")
 	private User user;
 
-	@OneToMany(mappedBy = "profile")
-	@JsonIgnoreProperties
-	private List<Publication> publications = new ArrayList();
+	@OneToMany(mappedBy = "profile", fetch = FetchType.EAGER)
+	@JsonIgnoreProperties("profile")
+	private List<Publication> publications = new ArrayList<>();
 
 	@OneToMany(mappedBy = "followee", fetch = FetchType.EAGER)
-	private List<People> followers;
+	private List<People> followers = new ArrayList<>();
 
 	@OneToMany(mappedBy = "follower", fetch = FetchType.EAGER)
-	private List<People> followees;
+	private List<People> followees = new ArrayList<>();
 
 }
