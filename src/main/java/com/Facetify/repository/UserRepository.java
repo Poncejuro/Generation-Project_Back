@@ -10,6 +10,7 @@ import com.Facetify.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+	
 	List<User> findAllByActive(boolean active);
 
 	Optional<User> findByEmail(String email);

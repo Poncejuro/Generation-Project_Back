@@ -1,7 +1,5 @@
 package com.Facetify.entity;
 
-import java.util.*;
-
 import com.Facetify.entity.limits.PublicationFieldLimits;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -31,13 +29,12 @@ public class Publication implements PublicationFieldLimits {
 	@Column(name = "img", nullable = false, length = IMG_DB_LENGTH)
 	private String img;
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	@MapsId("profileId")
-	@JoinColumn(name = "profile_id")
+	@ManyToOne
 	@JsonIgnoreProperties("publications")
+	@JoinColumn(name = "profile_id")
 	private Profile profile;
 
-	@OneToMany(mappedBy = "publication", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private List<Event> events = new ArrayList<>();
+//	@OneToMany(mappedBy = "publication")
+//	private List<Event> events = new ArrayList<>();
 
 }

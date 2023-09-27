@@ -1,7 +1,5 @@
 package com.Facetify.entity;
 
-import java.util.*;
-
 import com.Facetify.entity.limits.ProfileFieldLimits;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -30,18 +28,21 @@ public class Profile implements ProfileFieldLimits {
 	private String photo;
 
 	@OneToOne
-	@MapsId("userId")
+//	@MapsId("userId")
 	@JoinColumn(name = "user_id")
+	@JsonIgnoreProperties("profile")
 	private User user;
 
-	@OneToMany(mappedBy = "profile", fetch = FetchType.EAGER)
-	@JsonIgnoreProperties("profile")
-	private List<Publication> publications = new ArrayList<>();
-
-	@OneToMany(mappedBy = "followee", fetch = FetchType.EAGER)
-	private List<People> followers = new ArrayList<>();
-
-	@OneToMany(mappedBy = "follower", fetch = FetchType.EAGER)
-	private List<People> followees = new ArrayList<>();
+//	@OneToMany(mappedBy = "profile")
+//	@JsonIgnoreProperties("profile")
+//	private List<Publication> publications = new ArrayList<>();
+//
+//	@OneToMany(mappedBy = "followee")
+//	@JsonIgnoreProperties("profile")
+//	private List<People> followers = new ArrayList<>();
+//
+//	@OneToMany(mappedBy = "follower")
+//	@JsonIgnoreProperties("profile")
+//	private List<People> followees = new ArrayList<>();
 
 }

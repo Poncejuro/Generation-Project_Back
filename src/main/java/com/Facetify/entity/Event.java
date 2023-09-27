@@ -23,13 +23,11 @@ public class Event {
 	private Long eventId;
 
 	@ManyToOne
-//	@MapsId("publicationId")
 	@JsonIgnoreProperties("events")
 	@JoinColumn(name = "publication_id")
 	private Publication publication;
 
 	@ManyToOne
-//	@MapsId("profileId")
 	@JsonIgnoreProperties("publications")
 	@JoinColumn(name = "profile_id")
 	private Profile profile;

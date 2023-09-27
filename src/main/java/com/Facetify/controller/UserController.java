@@ -62,6 +62,13 @@ public class UserController {
 		return new ResponseEntity<>(updateUser, HttpStatus.OK);
 	}
 
+	@PutMapping("reactivate/{id}")
+	public ResponseEntity<String> reactivateUser(@PathVariable Long id) {
+		userService.reactivateUser(id);
+		log.info("Reactivating an existing user.");
+		return new ResponseEntity<>("User with id " + id + " has been successfully reactivated.", HttpStatus.OK);
+	}
+
 	@DeleteMapping("{id}")
 	public ResponseEntity<String> deleteUser(@PathVariable Long id) {
 		userService.deleteUser(id);

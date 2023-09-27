@@ -56,6 +56,8 @@ public class UserServiceImpl implements UserService {
 	public User updateUser(User user, Long id) {
 		User existingUser = getUserById(id);
 		existingUser.setFullName(user.getFullName());
+		existingUser.setPassword(user.getPassword());
+		existingUser.setEmail(user.getEmail());
 		existingUser.setCellphone(user.getCellphone());
 		return saveUser(existingUser);
 	}
@@ -66,6 +68,13 @@ public class UserServiceImpl implements UserService {
 //		userRepository.delete(existingUser);
 		User existingUser = getUserById(id);
 		existingUser.setActive(false);
+		saveUser(existingUser);
+	}
+
+	@Override
+	public void reactivateUser(Long id) {
+		User existingUser = getUserById(id);
+		existingUser.setActive(true);
 		saveUser(existingUser);
 	}
 

@@ -22,5 +22,7 @@ public interface UserService extends UserFieldLimits {
 	User updateUser(User user, Long id);
 
 	void deleteUser(Long id);
+	
+	void reactivateUser(Long id);
 
 }
