@@ -28,7 +28,7 @@ public class User implements UserFieldLimits {
 	private String email;
 	@Column(name = "cellphone", nullable = false, length = CELLPHONE_DB_LENGTH)
 	private String cellphone;
-	@Column(name = "password", nullable = false, length = CELLPHONE_DB_LENGTH)
+	@Column(name = "password", nullable = false, length = PASSWORD_DB_LENGTH)
 	private String password;
 	@Column(name = "created_at", insertable = false, updatable = false, columnDefinition = "timestamp default CURRENT_TIMESTAMP")
 	private Timestamp createdAt;
