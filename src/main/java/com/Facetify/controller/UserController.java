@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/users")
+@CrossOrigin(origins = "*")
 @Log4j2 // to print in console
 public class UserController {
 
@@ -26,11 +27,19 @@ public class UserController {
 		log.info("Creating a new user.");
 		return new ResponseEntity<>(newUser, HttpStatus.CREATED);
 	}
-
+	/**
 	@GetMapping("{id}")
 	public ResponseEntity<User> getUserById(@PathVariable Long id) {
 		User user = userService.getUserById(id);
 		log.info("Getting a user by Id.");
+		return new ResponseEntity<>(user, HttpStatus.OK);
+	}
+	 */
+
+	@GetMapping("{email}")
+	public ResponseEntity<User> getUserByEmail(@PathVariable String email) {
+		User user = userService.getUserByEmail(email);
+		log.info("Getting a user by Email.");
 		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
 
@@ -55,6 +64,8 @@ public class UserController {
 		return new ResponseEntity<>(inactiveUsers, HttpStatus.OK);
 	}
 
+
+
 	@PutMapping("{id}")
 	public ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable Long id) {
 		User updateUser = userService.updateUser(user, id);
@@ -75,5 +86,7 @@ public class UserController {
 		log.info("Deactivating a user.");
 		return new ResponseEntity<>("User with id " + id + " has been successfully deactivated.", HttpStatus.OK);
 	}
+
+
 
 }
