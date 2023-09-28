@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/profiles")
+@CrossOrigin(origins = "*")
 @Log4j2 // to print in console
 public class ProfileController {
 

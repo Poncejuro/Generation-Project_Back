@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/publications")
+@CrossOrigin(origins = "*")
 @Log4j2 // to print in console
 public class PublicationController {
 	@Autowired
