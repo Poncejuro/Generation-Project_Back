@@ -1,13 +1,13 @@
-INSERT INTO users(fullname,email,cellphone,password,active) VALUES('John Doe', 'john.doe@email.com', '1234567890', 'password1',1);
-INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Jane Smith', 'jane.smith@email.com', '9876543210', 'password2',1);
-INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Alice Johnson', 'alice.johnson@email.com', '5551234567', 'password3',0);
-INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Bob Wilson', 'bob.wilson@email.com', '9998887777', 'password4',1);
-INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Eva Davis', 'eva.davis@email.com', '1112223333', 'password5',1);
-INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Michael Lee', 'michael.lee@email.com', '3334445555', 'password6',0);
-INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Sara Brown', 'sara.brown@email.com', '7778889999', 'password7',1);
-INSERT INTO users(fullname,email,cellphone,password,active) VALUES('David Garcia', 'david.garcia@email.com', '4445556666', 'password8',1);
-INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Sophia Martinez', 'sophia.martinez@email.com', '6667778888', 'password9',0);
-INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Daniel Wilson', 'daniel.wilson@email.com', '2221110000', 'password10',1);
+INSERT INTO users(fullname,email,cellphone,password,active) VALUES('John Doe', 'john.doe@email.com', '1234567890', 'password1',TRUE);
+INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Jane Smith', 'jane.smith@email.com', '9876543210', 'password2',TRUE);
+INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Alice Johnson', 'alice.johnson@email.com', '5551234567', 'password3',TRUE);
+INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Bob Wilson', 'bob.wilson@email.com', '9998887777', 'password4',TRUE);
+INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Eva Davis', 'eva.davis@email.com', '1112223333', 'password5',TRUE);
+INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Michael Lee', 'michael.lee@email.com', '3334445555', 'password6',TRUE);
+INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Sara Brown', 'sara.brown@email.com', '7778889999', 'password7',TRUE);
+INSERT INTO users(fullname,email,cellphone,password,active) VALUES('David Garcia', 'david.garcia@email.com', '4445556666', 'password8',TRUE);
+INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Sophia Martinez', 'sophia.martinez@email.com', '6667778888', 'password9',TRUE);
+INSERT INTO users(fullname,email,cellphone,password,active) VALUES('Daniel Wilson', 'daniel.wilson@email.com', '2221110000', 'password10',TRUE);
 
 
 
